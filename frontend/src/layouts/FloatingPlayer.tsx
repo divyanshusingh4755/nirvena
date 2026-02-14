@@ -8,7 +8,7 @@ const FloatingPlayer = () => {
 
     if (!isVisible) return null;
 
-    const audioRef = useRef(null);
+    const audioRef = useRef<HTMLAudioElement>(null);
 
     // Toggle Play/Pause
     const togglePlay = () => {
@@ -19,9 +19,17 @@ const FloatingPlayer = () => {
 
     // Update progress bar
     const handleTimeUpdate = () => {
-        const current = audioRef?.current?.currentTime;
-        const duration = audioRef?.current?.duration;
-        setIsProgress((current / duration) * 100)
+        const audio = audioRef.current;
+        if (!audio) return;
+
+        const current = audio.currentTime;
+        const duration = audio.duration;
+
+        if (duration && !isNaN(duration) && isFinite(duration)) {
+            setIsProgress((current / duration) * 100);
+        } else {
+            setIsProgress(0);
+        }
     }
 
     return (
