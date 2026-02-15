@@ -7,7 +7,7 @@ import Navbar from "./layouts/Navbar";
 import NirvenaForBusiness from "./layouts/NirvenaForBusiness";
 import PricingTransparency from "./layouts/PricingTransparency";
 import ProfessionalGrid from "./layouts/ProfessionalGrid";
-import QuickExit from "./layouts/QuickExit";
+// import QuickExit from "./layouts/QuickExit";
 import ResourceHub from "./layouts/ResourceHub";
 import Roadmap from "./layouts/Roadmap";
 import Testimonials from "./layouts/Testimonials";
@@ -30,7 +30,7 @@ function App() {
         <NirvenaForBusiness />
         <Footer />
       </main>
-      <QuickExit />
+      {/* <QuickExit /> */}
       {/* <FloatingPlayer /> */}
     </>
   )

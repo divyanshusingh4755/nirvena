@@ -48,26 +48,38 @@ const HeroSection = () => {
                         </div>
                     </div>
                     {/* Visual Column */}
-                    <div className="relative hidden lg:block">
-                        <div className="relative z-10 rounded-[4rem] overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-700 ease-in-out">
-                            <img
-                                src={smilingFace}
-                                alt="supportive environment"
-                                className="w-full h-[550px] object-cover"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-orange-500/20 to-transparent" />
-                        </div>
-                        {/* Float card: Stats */}
-                        <div className="absolute -bottom-6 -left-10 bg-white/90 backdrop-blur-md p-6 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-white/20 z-20 transition-all hover:scale-105">
-                            <div className="flex items-center space-x-3">
-                                <div className="bg-orange-100 p-2 rounded-full">
-                                    <Star className="text-orange-500 fill-current h-5 w-5" />
+                    <div className="relative hidden lg:block h-[580px]">
+                        <div className="grid grid-cols-4 grid-row-4 gap-4 h-full">
+                            {/* Large Main Image */}
+                            <div className="col-span-3 row-span-4 relative rounded-[3rem] overflow-hidden group shadow-2xl border border-white/20">
+                                <img
+                                    src={smilingFace}
+                                    alt="supportive environment"
+                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent pointer-events-none" />
+                            </div>
+
+                            {/* Top Right - Accent Color/Icon */}
+                            <div className="col-span-1 row-span-2 bg-white/40 backdrop-blur-md rounded-[2.5rem] border border-white/60 p-6 flex flex-col items-center justify-center text-center shadow-sm">
+                                <div className="bg-primary/10 p-4 rounded-full mb-3">
+                                    <ShieldCheck className="h-8 w-8 text-primary" />
+                                </div>
+                                <p className="text-[10px] uppercase tracking-widest font-bold text-primary-text/60">Verified</p>
+                            </div>
+
+                            {/* Middle Right - Secondary Image */}
+                            <div className="col-span-1 row-span-2 bg-primary p-6 rounded-[2.5rem] flex flex-col justify-end text-white shadow-xl">
+                                <div>
+                                    <p className="text-3xl font-black leading-none">5k+</p>
+                                    <p className="text-xs font-medium opacity-80 mt-1 leading-tight">Lives Transformed</p>
                                 </div>
                             </div>
-                            <div>
-                                <p className="text-gray-900 font-extrabold text-2xl">5,000+</p>
-                                <p className="text-gray-500 text-sm font-semibold uppercase tracking-wider">Happy Humans</p>
-                            </div>
+                        </div>
+                        {/* Floating Badge */}
+                        <div className="absolute -bottom-6 -left-6 bg-white py-3 px-5 rounded-2xl shadow-xl border border-secondary flex items-center gap-3">
+                            <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
+                            <span className="text-sm font-bold text-primary-text">Next session: Today at 4 PM</span>
                         </div>
                     </div>
                 </div>
